@@ -73,27 +73,23 @@
     </div>
   </div>
 
-  <!-- 遊戲進行畫面 (導入大螢幕雙欄佈局) -->
+  <!-- 遊戲進行畫面 (大螢幕雙欄佈局) -->
   <div id="playing-screen" class="min-h-screen p-4 sm:p-8 pb-24 hidden flex justify-center w-full">
     <div class="w-full max-w-6xl flex flex-col lg:flex-row gap-6 items-start">
       
-      <!-- 左側面板：狀態、戰鬥競技場、背包 (大螢幕吸頂) -->
+      <!-- 左側面板：狀態、戰鬥競技場、背包 -->
       <div class="w-full lg:w-5/12 flex flex-col gap-6 lg:sticky lg:top-8 z-10">
-        
         <!-- 頂部玩家狀態區 -->
         <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row justify-between items-center gap-4 bg-slate-800 p-4 rounded-2xl border-4 border-slate-900 relative w-full">
-          <!-- 動態稱號徽章 -->
           <div id="rank-badge" class="absolute -top-4 -left-2 bg-slate-700 border-2 border-slate-900 px-3 py-1 rounded-full flex items-center gap-1 shadow-lg transform -rotate-3 z-10 animate-pulse">
             <span id="rank-icon" class="text-slate-400 text-sm">🗺️</span>
             <span id="rank-title" class="font-black text-sm text-slate-400">新手村民</span>
           </div>
-
           <div class="flex items-center gap-2 bg-slate-900 p-2 px-4 rounded-xl border-2 border-slate-700 mt-2 sm:mt-0 xl:mt-0 lg:mt-2 w-full sm:w-auto lg:w-full xl:w-auto justify-center">
             <span class="text-red-500 animate-[pulse_1s_infinite] text-2xl">❤️</span>
             <span class="text-red-500 animate-[pulse_1s_infinite_100ms] text-2xl">❤️</span>
             <span class="text-red-500 animate-[pulse_1s_infinite_200ms] text-2xl">❤️</span>
           </div>
-
           <div class="flex-1 w-full flex items-center gap-3 bg-slate-900 p-2 px-4 rounded-xl border-2 border-slate-700 relative">
             <span class="text-yellow-500 text-2xl animate-[spin_3s_linear_infinite]">⭐</span>
             <div class="flex-1 h-6 bg-slate-700 rounded-full border-2 border-slate-900 overflow-hidden relative">
@@ -109,7 +105,6 @@
           <div class="absolute top-10 right-20 w-24 h-6 bg-white/20 rounded-sm"></div>
           <div class="absolute bottom-0 left-0 w-full h-8 bg-green-500 border-t-4 border-slate-900"></div>
 
-          <!-- 左側：方塊勇者 -->
           <div id="hero-avatar" class="relative z-10 transition-all duration-300 transform animate-bob">
             <svg viewBox="0 0 100 100" width="80" height="80" class="overflow-visible drop-shadow-[0_4px_0_rgba(0,0,0,0.3)]">
               <rect id="hero-sword" x="65" y="45" width="40" height="12" fill="#cbd5e1" rx="2" stroke="#1e293b" stroke-width="3" class="transition-transform duration-300 origin-left" />
@@ -122,7 +117,6 @@
             </svg>
           </div>
 
-          <!-- 右側：方塊恐龍怪獸 -->
           <div id="monster-avatar" class="relative z-10 transition-all duration-300 transform animate-bob-delay">
             <div id="monster-damage-text" class="absolute -top-12 left-1/2 -translate-x-1/2 text-2xl font-black text-red-500 drop-shadow-[0_2px_2px_#fff] animate-float-up whitespace-nowrap z-20 hidden">
               -100 HP
@@ -154,7 +148,6 @@
           </div>
           <div id="backpack-grid" class="grid grid-cols-6 sm:grid-cols-8 lg:grid-cols-6 gap-2"></div>
         </div>
-
       </div>
 
       <!-- 右側面板：主要任務卡片 -->
@@ -192,7 +185,6 @@
           <div id="options-container" class="space-y-4 lg:space-y-6 mt-8"></div>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -201,26 +193,38 @@
     <div id="feedback-bg-fx" class="absolute inset-0 overflow-hidden pointer-events-none opacity-40 hidden">
        <div class="w-[200%] h-[200%] absolute top-[-50%] left-[-50%] radial-burst animate-spin-bg"></div>
     </div>
-    <div id="feedback-card" class="w-full max-w-md border-4 border-slate-900 border-b-[12px] rounded-3xl p-6 sm:p-8 text-center transform animate-zoom-in relative z-10 bg-white shadow-2xl"></div>
+    <div id="feedback-card" class="w-full max-w-md lg:max-w-lg border-4 border-slate-900 border-b-[12px] rounded-3xl p-6 sm:p-10 text-center transform animate-zoom-in relative z-10 bg-white shadow-2xl"></div>
   </div>
 
-  <!-- 遊戲結束畫面 -->
+  <!-- 暖心畢業結束畫面 -->
   <div id="end-screen" class="min-h-screen flex flex-col items-center justify-center p-4 overflow-hidden hidden">
-    <div class="max-w-xl w-full bg-yellow-400 rounded-3xl p-8 sm:p-10 border-4 border-slate-900 border-b-[12px] text-center relative">
+    <div class="max-w-2xl w-full bg-amber-100 rounded-3xl p-8 sm:p-10 border-4 border-slate-900 border-b-[12px] text-center relative shadow-2xl">
       <div class="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none opacity-20">
          <div class="w-[200%] h-[200%] absolute top-[-50%] left-[-50%] radial-burst animate-spin-bg"></div>
       </div>
       <div class="relative z-10">
         <div class="w-32 h-32 bg-white rounded-full mx-auto mb-6 flex items-center justify-center border-4 border-slate-900 border-b-8 shadow-[0_0_30px_rgba(250,204,21,1)]">
-          <span class="text-6xl animate-bounce">👑</span>
+          <span class="text-6xl animate-bounce">🎓</span>
         </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 mb-2 tracking-wide drop-shadow-sm">傳說級勇者誕生!</h1>
-        <p class="text-xl sm:text-2xl font-bold text-slate-800 mb-8 mt-4">全裝備收集完成 (12/12)</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-orange-600 mb-6 tracking-wide drop-shadow-sm">恭喜畢業！</h1>
+        
+        <div class="bg-white/90 border-4 border-slate-900 rounded-2xl p-6 sm:p-8 mb-8 relative text-left shadow-lg">
+          <button onclick="speak('親愛的畢業生，恭喜你完成所有轉銜任務！帶著你收集到的勇氣、樂觀與智慧，國中這個新地圖絕對難不倒你。未來的冒險，你就是自己人生最耀眼的主角！祝福你，畢業快樂！')" class="absolute -top-5 -right-5 shrink-0 p-4 rounded-full border-4 border-slate-900 border-b-8 active:border-b-4 active:translate-y-1 transition-all flex items-center justify-center bg-blue-300 hover:bg-blue-200 z-20">
+            <span class="text-2xl drop-shadow-sm">🔊</span>
+          </button>
+          <p class="text-xl sm:text-2xl font-bold text-slate-800 leading-relaxed">
+            親愛的畢業生，恭喜你完成所有任務！<br><br>
+            帶著你收集到的勇氣、樂觀與智慧，國中這個新地圖絕對難不倒你。<br>
+            未來的冒險，<span class="text-blue-600">你就是自己人生最耀眼的主角！</span><br><br>
+            🌻 祝福你，畢業快樂！
+          </p>
+        </div>
 
-        <div id="end-backpack-grid" class="bg-white/80 p-4 sm:p-6 rounded-xl border-4 border-slate-900 mb-8 grid grid-cols-4 sm:grid-cols-6 gap-3"></div>
+        <p class="text-xl sm:text-2xl font-bold text-slate-800 mb-4">全裝備收集完成 (12/12)</p>
+        <div id="end-backpack-grid" class="bg-white/60 p-4 sm:p-6 rounded-xl border-4 border-slate-900 mb-8 grid grid-cols-4 sm:grid-cols-6 gap-3"></div>
 
-        <button onclick="replay()" class="w-full bg-indigo-500 hover:bg-indigo-400 text-white font-black text-2xl sm:text-3xl py-4 px-6 rounded-2xl border-4 border-slate-900 border-b-8 active:border-b-4 active:translate-y-2 transition-all flex items-center justify-center gap-2">
-          <span>🔄</span> 重新冒險
+        <button onclick="replay()" class="w-full bg-green-500 hover:bg-green-400 text-slate-900 font-black text-2xl sm:text-3xl py-4 px-6 rounded-2xl border-4 border-slate-900 border-b-8 active:border-b-4 active:translate-y-2 transition-all flex items-center justify-center gap-2">
+          <span>🔄</span> 回顧冒險
         </button>
       </div>
     </div>
@@ -394,7 +398,7 @@
         currentLevel++;
       } else {
         gameState = 'end';
-        speak("太神啦！你已經完成了12個國中轉銜任務，打倒了大魔王，準備好迎接國中生活了嗎？");
+        speak("🎉恭喜畢業！親愛的畢業生，你已經完成所有轉銜任務！帶著收集到的勇氣與智慧，去迎接國中的新冒險吧！");
       }
       render();
     }
@@ -414,6 +418,14 @@
       document.getElementById('start-screen').classList.toggle('hidden', gameState !== 'start');
       document.getElementById('playing-screen').classList.toggle('hidden', gameState !== 'playing');
       document.getElementById('end-screen').classList.toggle('hidden', gameState !== 'end');
+
+      // 全域控制 Modal 顯示狀態 (修復卡關 Bug)
+      const modal = document.getElementById('feedback-modal');
+      if (gameState === 'playing' && feedback) {
+        modal.classList.remove('hidden');
+      } else {
+        modal.classList.add('hidden');
+      }
 
       if (gameState === 'playing') {
         const level = gameData[currentLevel];
@@ -500,15 +512,12 @@
           `;
         });
 
-        // 7. 更新 Modal (全螢幕回饋視窗)
-        const modal = document.getElementById('feedback-modal');
-        const modalFx = document.getElementById('feedback-bg-fx');
-        const modalCard = document.getElementById('feedback-card');
-
+        // 7. 更新 Modal 視窗內容 (當 feedback 存在時)
         if (feedback) {
-          modal.classList.remove('hidden');
-          modalFx.classList.toggle('hidden', !feedback.isCorrect);
+          const modalFx = document.getElementById('feedback-bg-fx');
+          const modalCard = document.getElementById('feedback-card');
           
+          modalFx.classList.toggle('hidden', !feedback.isCorrect);
           modalCard.className = `w-full max-w-md lg:max-w-lg border-4 border-slate-900 border-b-[12px] rounded-3xl p-6 sm:p-10 text-center transform animate-zoom-in relative z-10 shadow-2xl ${feedback.isCorrect ? 'bg-green-400' : 'bg-red-400'}`;
           
           modalCard.innerHTML = feedback.isCorrect ? `
@@ -553,8 +562,6 @@
               </button>
             </div>
           `;
-        } else {
-          modal.classList.add('hidden');
         }
       }
 
